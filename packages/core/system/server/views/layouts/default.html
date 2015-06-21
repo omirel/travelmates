@@ -3,14 +3,14 @@
 {% include '../includes/head.html' %}
 
 <body ng-cloak class="ng-cloak" ng-class="state">
+<div class="wrapper">
     <!-- {% include '../layouts/header.html' %} -->
     <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
-    <div data-ng-include="'/admin/views/index.html'"></div>
-    <section class="content">
-        <section class="container">
+
+    <div class="container content">
             {% block content %}{% endblock %}
-        </section>
-    </section>
+    </div>
+</div><!--/End Wrapepr-->
     {% include '../includes/foot.html' %}
 </body>
 
