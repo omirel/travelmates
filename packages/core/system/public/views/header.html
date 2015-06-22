@@ -30,13 +30,12 @@
             <li class="hoverSelector">
                 <i class="fa fa-globe"></i>
                 <a>Languages</a>
-                <ul class="languages hoverSelectorBlock">
+                <ul class="languages hoverSelectorBlock" ng-controller="LocaleController">
                     <li class="active">
-                        <a href="#">English <i class="fa fa-check"></i></a>
+                        <a href="#" ng-click="changeLang('en_US')">English <i class="fa fa-check"></i></a>
                     </li>
-                    <li><a href="#">Spanish</a></li>
-                    <li><a href="#">Russian</a></li>
-                    <li><a href="#">German</a></li>
+                    <li><a href="#" ng-click="changeLang('de_DE')">German</a></li>
+                    <li><a href="#" ng-click="changeLang('es')">Spanish</a></li>
                 </ul>
             </li>
             <li class="topbar-devider"></li>

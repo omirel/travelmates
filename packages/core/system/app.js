@@ -59,7 +59,6 @@ SystemPackage.register(function(app, auth, database) {
     roles: ['authenticated'],
     menu: 'account'
   });
-  
 
   return SystemPackage;
 
