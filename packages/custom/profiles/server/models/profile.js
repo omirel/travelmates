@@ -25,6 +25,11 @@ var ProfileSchema = new Schema({
     required: true,
     trim: true
   },
+  content2: {
+    type: String,
+    required: true,
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
@@ -44,6 +49,10 @@ ProfileSchema.path('title').validate(function(title) {
 ProfileSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');
+
+ProfileSchema.path('content2').validate(function(content2) {
+  return !!content2;
+}, 'Where is my Content2???');
 
 /**
  * Statics

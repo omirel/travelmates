@@ -28,7 +28,7 @@
             <section>
                 <label class="input">
                     <i class="icon-append fa fa-user"></i>
-                    <input name="title" type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title" required>
+                    <input name="title" type="text" data-ng-model="title" id="title" placeholder="Title" required>
                     <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
                     <div ng-show="submitted && profileForm.title.$invalid" class="alert alert-danger fade in">
                         <p ng-show="profileForm.title.$error.required">Title is required</p>
@@ -40,9 +40,22 @@
         <dd>
             <section>
                 <label class="textarea textarea-expandable">
-                    <textarea name="content" data-ng-model="content" id="content" cols="30" rows="5" placeholder="Content" class="form-control" required></textarea>
+                    <textarea name="content" data-ng-model="content" id="content" cols="30" rows="5" placeholder="Content" required></textarea>
                     <div ng-show="submitted && profileForm.content.$invalid" class="alert alert-danger fade in">
                         <p ng-show="profileForm.content.$error.required">Content is required</p>
+                    </div>
+                    <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
+                    <div class="note"><strong>Note:</strong> expands on focus.</div>
+                </label>
+            </section>
+        </dd>
+        <dt>Content2</dt>
+        <dd>
+            <section>
+                <label class="textarea textarea-expandable">
+                    <textarea name="content2" data-ng-model="content2" id="content2" cols="30" rows="5" placeholder="Content2" required></textarea>
+                    <div ng-show="submitted && profileForm.content2.$invalid" class="alert alert-danger fade in">
+                        <p ng-show="profileForm.content2.$error.required">Content is required</p>
                     </div>
                     <b class="tooltip tooltip-bottom-right">Needed to enter the website</b>
                     <div class="note"><strong>Note:</strong> expands on focus.</div>

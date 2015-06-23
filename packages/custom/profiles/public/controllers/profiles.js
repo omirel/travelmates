@@ -31,7 +31,8 @@ angular.module('mean.profiles').controller('ProfilesController', ['$scope', '$st
       if (isValid) {
         var profile = new Profiles({
           title: this.title,
-          content: this.content
+          content: this.content,
+          content2: this.content2
         });
         profile.$save(function(response) {
           $location.path('profiles/' + response._id);
@@ -39,6 +40,7 @@ angular.module('mean.profiles').controller('ProfilesController', ['$scope', '$st
 
         this.title = '';
         this.content = '';
+        this.content2 = '';
       } else {
         $scope.submitted = true;
       }
