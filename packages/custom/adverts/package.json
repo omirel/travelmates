@@ -1,9 +1,9 @@
 {
   "name": "adverts",
   "version": "0.0.1",
-  "description": "Some description of adverts",
+  "description": "Travelmate adverts",
   "author": {
-    "name": "mean scaffold"
+    "name": "Olaf Mirel"
   },
   "mean": "0.5.0",
   "engines": {
