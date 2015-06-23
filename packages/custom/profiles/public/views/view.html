@@ -12,15 +12,16 @@
 <div class="profile-bio">
     <div class="row">
         <div class="col-md-5">
-            <img class="img-responsive md-margin-bottom-10" src="{{prctr.prctrvars.photo}}" alt="">
+            <img class="img-responsive md-margin-bottom-10" src="assets/img/team/img1-md.jpg" alt="">
             <a class="btn-u btn-u-sm" href="#">Change Picture</a>
         </div>
         <div class="col-md-7">
-            <h2>{{prctr.prctrvars.firstName}} {{prctr.prctrvars.lastName}}</h2>
-            <span><strong>{{ 'PROFILES_GENDER' | translate }}:</strong> {{prctr.prctrvars.gender}}</span>
-            <span><strong>{{ 'PROFILES_STATUS' | translate }}:</strong> {{prctr.prctrvars.status}}</span>
+            <h2>{{profile.title}}</h2>
+            <span><strong>{{ 'PROFILES_GENDER' | translate }}:</strong> gender</span>
+            <span><strong>{{ 'PROFILES_STATUS' | translate }}:</strong> status</span>
             <hr>
-            <p>{{prctr.prctrvars.about}}</p>
+            <p>{{profile.content}}</p>
+            <p>{{profile.content2}}</p>
         </div>
     </div>
 </div><!--/end row-->

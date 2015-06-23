@@ -7,17 +7,6 @@ angular.module('mean.profiles').controller('ProfilesController', ['$scope', '$st
       name: 'profiles'
     };
 
-    var vm = this;
-
-    vm.prctrvars = {
-      firstName: 'Olf',
-      lastName: 'Mirel',
-      gender: 'männlich',
-      status: 'single',
-      about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bi',
-      photo: 'assets/img/team/img1-md.jpg'
-    };
-
     $scope.getPartial = function (partial) {
       return '/profileViews/' + partial + '.html';
     }
