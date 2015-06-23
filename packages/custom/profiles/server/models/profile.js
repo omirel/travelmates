@@ -8,9 +8,9 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Article Schema
+ * Profile Schema
  */
-var ArticleSchema = new Schema({
+var ProfileSchema = new Schema({
   created: {
     type: Date,
     default: Date.now
@@ -37,21 +37,21 @@ var ArticleSchema = new Schema({
 /**
  * Validations
  */
-ArticleSchema.path('title').validate(function(title) {
+ProfileSchema.path('title').validate(function(title) {
   return !!title;
 }, 'Title cannot be blank');
 
-ArticleSchema.path('content').validate(function(content) {
+ProfileSchema.path('content').validate(function(content) {
   return !!content;
 }, 'Content cannot be blank');
 
 /**
  * Statics
  */
-ArticleSchema.statics.load = function(id, cb) {
+ProfileSchema.statics.load = function(id, cb) {
   this.findOne({
     _id: id
   }).populate('user', 'name username').exec(cb);
 };
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Profile', ProfileSchema);

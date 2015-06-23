@@ -20,24 +20,24 @@ exports.models = {
     }
   },
   Article: {
-    id: 'Article',
+    id: 'Profile',
     required: ['content'],
     properties: {
       id: {
         type: 'string',
-        description: 'Unique identifier for the Article'
+        description: 'Unique identifier for the Profie'
       },
       title: {
         type: 'string',
-        description: 'Title of the article'
+        description: 'Title of the profile'
       },
       content: {
         type: 'string',
-        description: 'content of the article'
+        description: 'content of the profile'
       },
       user: {
         type: 'User',
-        description: 'User that created the article'
+        description: 'User that created the profile'
       }
 
     }

@@ -16,6 +16,19 @@
         "bower_components/angular-jwt/dist/angular-jwt.min.js",
         "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
         "bower_components/web-bootstrap/index.js"
+      ],
+      "packages/core/system/public/build/js/dist.min.js": [
+        "packages/core/system/public/assets/lib/plugins/back-to-top.js",
+        "packages/core/system/public/assets/lib/plugins/smoothScroll.js",
+        "packages/core/system/public/assets/lib/plugins/circles-master/circles.js",
+        "packages/core/system/public/assets/lib/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js",
+        "packages/core/system/public/assets/lib/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js",
+        "packages/core/system/public/assets/lib/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js",
+        "packages/core/system/public/assets/lib/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js",
+        "packages/core/system/public/assets/js/app.js",
+        "packages/core/system/public/assets/js/forms/reg.js",
+        "packages/core/system/public/assets/js/forms/checkout.js",
+        "packages/core/system/public/assets/js/plugins/datepicker.js"
       ]
     }
   }

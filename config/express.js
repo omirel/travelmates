@@ -36,6 +36,10 @@ module.exports = function(app, db) {
   // Enable compression on bower_components
   app.use('/bower_components', express.static(config.root + '/bower_components'));
 
+  app.use('/assets', express.static(config.root + '/packages/core/system/public/assets/lib'));
+
+  app.use('/profileViews', express.static(config.root + '/packages/custom/profiles/public/views'));
+
   app.use('/locale', express.static(config.root + '/locale'));
 
   // Adds logging based on logging config in config/env/ entry
@@ -56,9 +60,7 @@ module.exports = function(app, db) {
 
   app.use(modRewrite([
     
-    '!^/api/.*|\\_getModules|\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif|\\.svg|\\.eot|\\.ttf|\\.woff|\\.pdf|\\de_DE.json$ / [L]'
+    '!^/api/.*|\\_getModules|\\.html|\\.js|\\.css|\\.swf|\\.jp(e?)g|\\.png|\\.gif|\\.svg|\\.eot|\\.ttf|\\.woff|\\.pdf$ / [L]'
 
   ]));
-
-  // app.use(seo());
 };

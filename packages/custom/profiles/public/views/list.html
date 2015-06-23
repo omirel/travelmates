@@ -1,21 +1,96 @@
-<section data-ng-controller="ArticlesController" data-ng-init="find()">
-  <ul class="articles unstyled">
-    <li data-ng-repeat="article in articles">
-      <span>{{article.created | date:'medium'}}</span> /
-      <span>{{article.user.name}}</span>
-      <h2>
-        <a data-ng-href="/articles/{{article._id}}">{{article.title}}</a>
-        <span data-ng-if="hasAuthorization(article)">
-          <a class="btn" href="/articles/{{article._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
+<!--=== Profile ===-->
+<div class="container content profile" data-ng-controller="ProfilesController as prctr" data-ng-init="find()">
+<div class="row">
+
+<!--Left Sidebar-->
+<div class="col-md-3 md-margin-bottom-40" data-ng-include="getPartial('sidebar')"></div>
+<!--End Left Sidebar-->
+
+<!-- Profile Content -->
+<div class="col-md-9">
+<div class="profile-body margin-bottom-20">
+
+<a href="/profiles/create">Create New</a>
+
+<!--Profile Blog-->
+<div class="row margin-bottom-20">
+    <div class="col-sm-6 sm-margin-bottom-20">
+        <div class="profile-blog">
+            <img class="rounded-x" src="assets/img/testimonials/img1.jpg" alt="">
+            <div class="name-location">
+                <strong>Mikel Andrews</strong>
+                <span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+            </div>
+            <div class="clearfix margin-bottom-20"></div>
+            <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+            <hr>
+            <ul class="list-inline share-list">
+                <li><i class="fa fa-bell"></i><a href="#">12 Notifications</a></li>
+                <li><i class="fa fa-group"></i><a href="#">54 Followers</a></li>
+                <li><i class="fa fa-share"></i><a href="#">Share</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="profile-blog">
+            <img class="rounded-x" src="assets/img/testimonials/user.jpg" alt="">
+            <div class="name-location">
+                <strong>Natasha Kolnikova</strong>
+                <span><i class="fa fa-map-marker"></i><a href="#">Moscow,</a> <a href="#">Russia</a></span>
+            </div>
+            <div class="clearfix margin-bottom-20"></div>
+            <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+            <hr>
+            <ul class="list-inline share-list">
+                <li><i class="fa fa-bell"></i><a href="#">37 Notifications</a></li>
+                <li><i class="fa fa-group"></i><a href="#">46 Followers</a></li>
+                <li><i class="fa fa-share"></i><a href="#">Share</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!--/end row-->
+<!--End Profile Blog-->
+
+<!--Profile Blog-->
+<div class="row margin-bottom-20">
+    <div class="col-sm-6 sm-margin-bottom-20" data-ng-repeat="profile in profiles">
+        <div class="profile-blog">
+            <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
+            <div class="name-location">
+                <strong><a data-ng-href="/profiles/{{profile._id}}">{{profile.title}}</a></strong>
+                <span><i class="fa fa-map-marker"></i><a href="#">California,</a> <a href="#">US</a></span>
+            </div>
+            <div class="clearfix margin-bottom-20"></div>
+            <p>{{profile.content}}</p>
+
+            <span data-ng-if="hasAuthorization(profile)">
+          <a class="btn" href="/profiles/{{profile._id}}/edit">
+              <i class="glyphicon glyphicon-edit"></i>
           </a>
-          <a class="btn" data-ng-click="remove(article);">
-            <i class="glyphicon glyphicon-trash"></i>
+          <a class="btn" data-ng-click="remove(profile);">
+              <i class="glyphicon glyphicon-trash"></i>
           </a>
         </span>
-      </h2>
-      <div>{{article.content}}</div>
-    </li>
-  </ul>
-  <h1 data-ng-hide="!articles || articles.length">No articles yet. <br> Why don't you <a href="/articles/create">Create One</a>?</h1>
-</section>
+
+
+            <hr>
+            <ul class="list-inline share-list">
+                <li><i class="fa fa-bell"></i><a href="#">{{profile.created | date:'medium'}}</a></li>
+                <li><i class="fa fa-group"></i><a href="#">{{profile.user.name}}</a></li>
+                <li><i class="fa fa-share"></i><a href="#">Share</a></li>
+            </ul>
+        </div>
+    </div>
+</div><!--/end row-->
+<!--End Profile Blog-->
+
+<button type="button" class="btn-u btn-u-default btn-block text-center">Load More</button>
+<!--End Profile Blog-->
+</div>
+</div>
+<!-- End Profile Content -->
+</div><!--/end row-->
+<h1 data-ng-hide="!profiles || profiles.length">No profiles yet. <br> Why don't you <a href="/profiles/create">Create One</a>?</h1>
+</div>
+<!--=== End Profile ===-->

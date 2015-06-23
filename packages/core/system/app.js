@@ -35,15 +35,26 @@ SystemPackage.register(function(app, auth, database) {
   SystemPackage.aggregateAsset('css', libDir + 'plugins/animate.css');
   SystemPackage.aggregateAsset('css', libDir + 'plugins/line-icons/line-icons.css');
   SystemPackage.aggregateAsset('css', libDir + 'plugins/font-awesome/css/font-awesome.min.css');
+  SystemPackage.aggregateAsset('css', libDir + 'plugins/scrollbar/css/jquery.mCustomScrollbar.css');
+  SystemPackage.aggregateAsset('css', libDir + 'plugins/sky-forms-pro/skyforms/css/sky-forms.css');
+  SystemPackage.aggregateAsset('css', libDir + 'plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css');
 
-  <!-- CSS Page Style -->
-  SystemPackage.aggregateAsset('css', libDir + 'css/pages/page_about.css');
+  <!-- JS Implementing Plugins -->
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/back-to-top.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/smoothScroll.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/circles-master/circles.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js');
+  SystemPackage.aggregateAsset('js', libDir + 'plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js');
 
-  <!-- CSS Customization -->
-  SystemPackage.aggregateAsset('css', libDir + 'css/custom.css');
+  <!-- JS Page Level -->
+  SystemPackage.aggregateAsset('js', libDir + 'js/app.js');
+  SystemPackage.aggregateAsset('js', libDir + 'js/forms/reg.js');
+  SystemPackage.aggregateAsset('js', libDir + 'js/forms/checkout.js');
+  SystemPackage.aggregateAsset('js', libDir + 'js/plugins/datepicker.js');
 
   // The middleware in config/express will run before this code
-
   // Set views path, template engine and default layout
   app.set('views', __dirname + '/server/views');
 

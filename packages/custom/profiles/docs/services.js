@@ -6,13 +6,13 @@ exports.load = function(swagger, parms) {
 
   var list = {
     'spec': {
-      description: 'Article operations',
-      path: '/articles',
+      description: 'Profile operations',
+      path: '/profiles',
       method: 'GET',
-      summary: 'Get all Articles',
+      summary: 'Get all Profiles',
       notes: '',
-      type: 'Article',
-      nickname: 'getArticles',
+      type: 'Profile',
+      nickname: 'getProfiles',
       produces: ['application/json'],
       params: searchParms
     }
@@ -21,18 +21,18 @@ exports.load = function(swagger, parms) {
   var create = {
     'spec': {
       description: 'Device operations',
-      path: '/articles',
+      path: '/profiles',
       method: 'POST',
-      summary: 'Create article',
+      summary: 'Create profile',
       notes: '',
-      type: 'Article',
-      nickname: 'createArticle',
+      type: 'Profile',
+      nickname: 'createProfile',
       produces: ['application/json'],
       parameters: [{
         name: 'body',
-        description: 'Article to create.  User will be inferred by the authenticated user.',
+        description: 'Profile to create.  User will be inferred by the authenticated user.',
         required: true,
-        type: 'Article',
+        type: 'Profile',
         paramType: 'body',
         allowMultiple: false
       }]

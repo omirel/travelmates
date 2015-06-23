@@ -4,111 +4,111 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  Article = mongoose.model('Article'),
+  Profile = mongoose.model('Profile'),
   _ = require('lodash');
 
-module.exports = function(Articles) {
+module.exports = function(Profiles) {
 
     return {
         /**
-        * Find article by id
+        * Find profile by id
         */
-        article: function(req, res, next, id) {
-            Article.load(id, function(err, article) {
+        profile: function(req, res, next, id) {
+            Profile.load(id, function(err, profile) {
                 if (err) return next(err);
-                if (!article) return next(new Error('Failed to load article ' + id));
-                req.article = article;
+                if (!profile) return next(new Error('Failed to load profile ' + id));
+                req.profile = profile;
                 next();
             });
         },
         /**
-        * Create an article
+        * Create an profile
         */
         create: function(req, res) {
-            var article = new Article(req.body);
-            article.user = req.user;
+            var profile = new Profile(req.body);
+            profile.user = req.user;
 
-            article.save(function(err) {
+            profile.save(function(err) {
                 if (err) {
                   return res.status(500).json({
-                    error: 'Cannot save the article'
+                    error: 'Cannot save the profile'
                   });
                 }
 
-                Articles.events.publish('create', {
-                    description: req.user.name + ' created ' + req.body.title + ' article.'
+                Profiles.events.publish('create', {
+                    description: req.user.name + ' created ' + req.body.title + ' profile.'
                 });
 
-                res.json(article);
+                res.json(profile);
             });
         },
         /**
-        * Update an article
+        * Update an profile
         */
         update: function(req, res) {
-            var article = req.article;
+            var profile = req.profile;
 
-            article = _.extend(article, req.body);
+            profile = _.extend(profile, req.body);
 
 
-            article.save(function(err) {
+            profile.save(function(err) {
                 if (err) {
                     return res.status(500).json({
-                        error: 'Cannot update the article'
+                        error: 'Cannot update the profile'
                     });
                 }
 
-                Articles.events.publish('update', {
-                    description: req.user.name + ' updated ' + req.body.title + ' article.'
+                Profiles.events.publish('update', {
+                    description: req.user.name + ' updated ' + req.body.title + ' profile.'
                 });
 
-                res.json(article);
+                res.json(profile);
             });
         },
         /**
-        * Delete an article
+        * Delete an profile
         */
         destroy: function(req, res) {
-            var article = req.article;
+            var profile = req.profile;
 
 
-            article.remove(function(err) {
+            profile.remove(function(err) {
                 if (err) {
                     return res.status(500).json({
-                        error: 'Cannot delete the article'
+                        error: 'Cannot delete the profile'
                     });
                 }
 
-                Articles.events.publish('remove', {
-                    description: req.user.name + ' deleted ' + article.title + ' article.'
+                Profiles.events.publish('remove', {
+                    description: req.user.name + ' deleted ' + profile.title + ' profile.'
                 });
 
-                res.json(article);
+                res.json(profile);
             });
         },
         /**
-        * Show an article
+        * Show an profile
         */
         show: function(req, res) {
 
-            Articles.events.publish('view', {
-                description: req.user.name + ' read ' + req.article.title + ' article.'
+            Profiles.events.publish('view', {
+                description: req.user.name + ' read ' + req.profile.title + ' profile.'
             });
 
-            res.json(req.article);
+            res.json(req.profile);
         },
         /**
-        * List of Articles
+        * List of Profiles
         */
         all: function(req, res) {
-            Article.find().sort('-created').populate('user', 'name username').exec(function(err, articles) {
+            Profile.find().sort('-created').populate('user', 'name username').exec(function(err, profiles) {
                 if (err) {
                     return res.status(500).json({
-                        error: 'Cannot list the articles'
+                        error: 'Cannot list the profiles'
                     });
                 }
 
-                res.json(articles);
+                res.json(profiles);
             });
         }
     };

@@ -18,13 +18,27 @@ Profiles.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Profiles.menus.add({
-    title: 'profiles example page',
-    link: 'profiles example page',
-    roles: ['authenticated'],
-    menu: 'main'
+    'roles': ['authenticated'],
+    'title': 'Profiles',
+    'link': 'all profiles'
   });
-  
-  Profiles.aggregateAsset('css', 'profiles.css');
+  Profiles.menus.add({
+    'roles': ['authenticated'],
+    'title': 'Create New Profile',
+    'link': 'create profile'
+  });
+
+  Profiles.events.design({
+    //http://fontawesome.io/icons
+    icon: 'fa-file-text',
+    color: '#8FD5FF'
+  });
+
+  <!-- CSS Page Style -->
+  Profiles.aggregateAsset('css', 'profile.css');
+  Profiles.aggregateAsset('css', 'shortcode_timeline2.css');
+
+  Profiles.aggregateAsset('js', 'circles-master.js');
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above

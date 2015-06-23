@@ -1,0 +1,16 @@
+{
+  "APP_HEADLINE": "Travelmates deutsch",
+  "APP_LANGUAGES": "Sprachen",
+  "APP_LANGUAGES_GERMAN": "Deutsch",
+  "APP_LANGUAGES_ENGLISH": "Englisch",
+  "APP_LANGUAGES_SPANISH": "Spanisch",
+  "APP_HELP": "Hilfe",
+
+  "PROFILES_OVERALL": "Gesamt",
+  "PROFILES_PROFILES": "Profile",
+  "PROFILES_USERS": "User",
+  "PROFILES_COMMENTS": "Kommentare",
+  "PROFILES_HISTORY": "Historie",
+  "PROFILES_GENDER": "Geschlecht",
+  "PROFILES_STATUS": "Status"
+}
