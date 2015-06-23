@@ -18,8 +18,8 @@ Travelmates.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Travelmates.menus.add({
-    title: 'travelmates example page',
-    link: 'travelmates example page',
+    title: 'travelmates Profile',
+    link: 'travelmates Profile',
     roles: ['authenticated'],
     menu: 'main'
   });

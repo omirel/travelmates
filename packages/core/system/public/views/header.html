@@ -29,17 +29,17 @@
         <ul class="loginbar pull-right">
             <li class="hoverSelector">
                 <i class="fa fa-globe"></i>
-                <a>Languages</a>
+                <a>{{ 'APP_LANGUAGES' | translate }}</a>
                 <ul class="languages hoverSelectorBlock" ng-controller="LocaleController">
                     <li class="active">
-                        <a href="#" ng-click="changeLang('en_US')">English <i class="fa fa-check"></i></a>
+                        <a href="#" ng-click="changeLang('de_DE')">{{ 'APP_LANGUAGES_GERMAN' | translate }}<i class="fa fa-check"></i></a>
                     </li>
-                    <li><a href="#" ng-click="changeLang('de_DE')">German</a></li>
-                    <li><a href="#" ng-click="changeLang('es')">Spanish</a></li>
+                    <li><a href="#" ng-click="changeLang('en_US')">{{ 'APP_LANGUAGES_ENGLISH' | translate }}</a></li>
+                    <li><a href="#" ng-click="changeLang('es_ES')">{{ 'APP_LANGUAGES_SPANISH' | translate }}</a></li>
                 </ul>
             </li>
             <li class="topbar-devider"></li>
-            <li><a href="page_faq.html">Help</a></li>
+            <li><a href="page_faq.html">{{ 'APP_HELP' | translate }}</a></li>
         </ul>
 
     </div>

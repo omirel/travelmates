@@ -1,18 +1,23 @@
 'use strict';
 
-/* jshint -W098 */
 angular.module('mean.travelmates', ['pascalprecht.translate']);
 
 angular.module('mean.travelmates').config(function ($translateProvider) {
-  $translateProvider.translations('de', {
-      APP_HEADLINE:  'Travelmates deutsch'
+  $translateProvider.translations('de_DE', {
+    "APP_HEADLINE":  "Travelmates deutsch",
+    "APP_LANGUAGES": "Sprachen",
+    "APP_LANGUAGES_GERMAN": "Deutsch",
+    "APP_LANGUAGES_ENGLISH": "Englisch",
+    "APP_LANGUAGES_SPANISH": "Spanisch",
+    "APP_HELP": "Hilfe"
   });
 
-  $translateProvider.translations('en_US', {
-    APP_HEADLINE:  'Travelmates english'
+  $translateProvider.useStaticFilesLoader({
+    prefix: 'locale/locale-',
+    suffix: '.json'
   });
 
-  $translateProvider.preferredLanguage('en_US');
+  $translateProvider.preferredLanguage('de_DE');
 });
 
 angular.module('mean.travelmates').controller('TravelmatesController', ['$scope', 'Global', 'Travelmates',
